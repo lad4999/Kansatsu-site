@@ -1,0 +1,61 @@
+# Kansatsu-site / _config.yml
+# ============================================================
+# これをKansatsu-siteリポジトリのルートに _config.yml として配置する
+# STEP 7: ghost_url と lemon_squeezy_url を実際のURLに書き換えること
+
+title: "なんか良いかも観察記"
+description: "世界が気づく前に、あなたが先に読む"
+author: "金枝エルフ"
+lang: ja
+
+url: "https://lad4999.github.io"
+baseurl: "/Kansatsu-site"
+
+# ============================================================
+# permalink: コードが計算するURLと一致させる
+# publisher.py が計算するURL: {base}/{YYYY-MM-DD}-{slug}.html
+# この設定により Jekyll が生成するURLが一致する
+# ============================================================
+permalink: "/:year-:month-:day-:title:output_ext"
+
+# ============================================================
+# 収益導線（publish.pyのCTAと対応）
+# ============================================================
+ghost_url:         "https://your-ghost.railway.app"       # ← 実際のURLに変更
+lemon_squeezy_url: "https://your-store.lemonsqueezy.com"  # ← 実際のURLに変更
+
+# ============================================================
+# SEO / Jekyll プラグイン
+# ============================================================
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEOタグ設定
+twitter:
+  username: supurepurenano
+  card: summary
+
+# ============================================================
+# ビルド設定
+# ============================================================
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .github/
+
+# ============================================================
+# コレクション設定（_postsのデフォルトレイアウト）
+# ============================================================
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+  <link rel="canonical" href="{{ page.url | prepend: site.url }}">
+  <style>
+    body { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.8; color: #1a1a1a; background: #fafafa; }
+    h1 { font-size: 1.6em; border-bottom: 2px solid #1a1a1a; padding-bottom: 0.3em; }
+    h2 { font-size: 1.3em; margin-top: 2em; }
+    a { color: #1a1a1a; }
+    .meta { color: #666; font-size: 0.9em; margin-bottom: 2em; }
+    .cta-top { background: #f0f0f0; border-left: 4px solid #1a1a1a; padding: 12px 16px; margin: 1.5em 0; font-size: 0.95em; }
+    .cta-bottom { background: #1a1a1a; color: #fff; padding: 20px; margin-top: 3em; text-align: center; }
+    .cta-bottom a { color: #fff; font-weight: bold; }
+    nav { margin-bottom: 2em; font-size: 0.9em; }
+  </style>
+  {% seo %}
+</head>
+<body>
+  <nav><a href="{{ site.baseurl }}/">← 観察記録</a></nav>
+  {{ content }}
+</body>
+</html>
